@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Pagination Example</title>
+</head>
+<body ng-app list-ctrl>
+
+<ng-pagination-example-pager paginator="ctrl.paginator"></ng-pagination-example-pager>
+
+<table>
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+    </tr>
+    <tr ng-repeat="item in ctrl.items | pagination:ctrl.paginator">
+        <td>{{item.number}}</td>
+        <td>{{item.name}}</td>
+    </tr>
+</table>
+
+<ng-pagination-example-pager paginator="ctrl.paginator"></ng-pagination-example-pager>
+
+<script type="application/dart" src="main.dart"></script>
+<script src="packages/browser/dart.js"></script>
+</body>
+</html>
