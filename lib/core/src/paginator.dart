@@ -24,12 +24,24 @@ class Paginator {
 
   /* This is needed because angular.dart at the time does not support
   * automatic converstion of values from numeric string to int and back
-  * when using ng-nodel*/
+  * when using ng-nodel and such*/
 
   String get sPageNum => pageNum.toString();
 
   void set sPageNum(String sPageNum) {
     this._pageNum = int.parse(sPageNum);
+  }
+
+  String get sPageSize => pageSize.toString();
+
+  void set sPageSize(String sPageSize) {
+    this.pageSize = int.parse(sPageSize);
+  }
+
+  String get sItemsTotal => itemsTotal.toString();
+
+  void set sItemsTotal(String sItemsTotal) {
+    this.itemsTotal = int.parse(sItemsTotal);
   }
 
   int pageSize;
