@@ -137,5 +137,21 @@ testPaginator() {
       expect(pinfo.pageNum, 3);
     });
 
+    test("sPageNum should return pageNum as String", () {
+      expect(pinfo.sPageNum, new isInstanceOf<String>());
+      expect(pinfo.sPageNum, "1");
+      pinfo.pageNum = 4;
+      expect(pinfo.sPageNum, new isInstanceOf<String>());
+      expect(pinfo.sPageNum, "4");
+    });
+
+    test("sPageNum should set pageNum from numeric string", () {
+      expect(pinfo.pageNum, 1);
+      pinfo.sPageNum = "4";
+      expect(pinfo.pageNum, 4);
+      pinfo.sPageNum = "2";
+      expect(pinfo.pageNum, 2);
+    });
+
   });
 }

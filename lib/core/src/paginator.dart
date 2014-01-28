@@ -18,7 +18,19 @@ class Paginator {
     return _pageNum;
   }
 
-  void set pageNum(int _pageNum) => this._pageNum = _pageNum;
+  void set pageNum(int _pageNum) {
+    this._pageNum = _pageNum;
+  }
+
+  /* This is needed because angular.dart at the time does not support
+  * automatic converstion of values from numeric string to int and back
+  * when using ng-nodel*/
+
+  String get sPageNum => pageNum.toString();
+
+  void set sPageNum(String sPageNum) {
+    this._pageNum = int.parse(sPageNum);
+  }
 
   int pageSize;
 
