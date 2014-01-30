@@ -5,10 +5,8 @@ part of angular.pagination.example;
     templateUrl: "ng_pagination_example_pager.html",
     publishAs: "m"
     )
-
 class NgPaginationExamplePager {
   @NgTwoWay("paginator")
-
   Paginator paginator;
 
 }

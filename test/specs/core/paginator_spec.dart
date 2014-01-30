@@ -137,37 +137,5 @@ testPaginator() {
       expect(pinfo.pageNum, 3);
     });
 
-    test("pageNum, pageSize and itemsTotal should have 's' prefixed getter that return corresponding value as String",
-             () {
-           expect(pinfo.sPageNum, new isInstanceOf<String>());
-           expect(pinfo.sPageNum, "1");
-           expect(pinfo.sPageSize, new isInstanceOf<String>());
-           expect(pinfo.sPageSize, "20");
-           expect(pinfo.sItemsTotal, new isInstanceOf<String>());
-           expect(pinfo.sItemsTotal, "100");
-           pinfo.pageNum = 4;
-           pinfo.pageSize = 22;
-           pinfo.itemsTotal = 101;
-           expect(pinfo.sPageNum, new isInstanceOf<String>());
-           expect(pinfo.sPageNum, "4");
-           expect(pinfo.sPageSize, new isInstanceOf<String>());
-           expect(pinfo.sPageSize, "22");
-           expect(pinfo.sItemsTotal, new isInstanceOf<String>());
-           expect(pinfo.sItemsTotal, "101");
-         });
-
-    test("pageNum, pageSize and itemsTotal should should have 's' prefixed setter that set corresponding value from numeric String",
-             () {
-           expect(pinfo.pageNum, 1);
-           expect(pinfo.pageSize, 20);
-           expect(pinfo.itemsTotal, 100);
-           pinfo.sPageNum = "4";
-           pinfo.sPageSize = "22";
-           pinfo.sItemsTotal = "101";
-           expect(pinfo.pageNum, 4);
-           expect(pinfo.pageSize, 22);
-           expect(pinfo.itemsTotal, 101);
-         });
-
   });
 }

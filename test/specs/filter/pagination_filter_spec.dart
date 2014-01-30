@@ -57,5 +57,9 @@ testPaginationFilter() {
       expect(pagination([], new Paginator.empty()), []);
     });
 
+    test("should return empty list if input is null", () {
+      expect(pagination(null, new Paginator.empty()), []);
+    });
+
   });
 }
