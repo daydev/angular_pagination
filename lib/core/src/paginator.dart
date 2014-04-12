@@ -7,6 +7,8 @@ part of angular.pagination.core;
 class Paginator {
   static const DEFAULT_PAGE_SIZE = 20;
 
+  Paginator _instanceCache = null;
+
   int _pageNum = 1;
 
   int get pageNum {
@@ -26,9 +28,24 @@ class Paginator {
 
   int itemsTotal;
 
-  Paginator(this.itemsTotal, [this.pageSize = DEFAULT_PAGE_SIZE]);
+  Paginator(this.itemsTotal, [this.pageSize = DEFAULT_PAGE_SIZE, this._pageNum = 1]);
 
   Paginator.empty() : this(0);
+
+  /**
+   * This is workaround for angular.dart's insistence on comparing objects only for identity
+   * disregarding object's state.
+   */
+  Paginator get instance {
+    if (_instanceCache == null) {
+      _instanceCache = copy;
+    }
+    if (this == _instanceCache) {
+      return this;
+    } else {
+      return _instanceCache = copy;
+    }
+  }
 
   int get maxPage => math.max((itemsTotal / pageSize).ceil(), 1);
 
@@ -58,7 +75,18 @@ class Paginator {
     pageNum = maxPage;
   }
 
+  Paginator get copy => new Paginator(itemsTotal, pageSize, pageNum);
+
+  bool operator ==(other) {
+    return other is Paginator &&
+           pageNum == other.pageNum &&
+           pageSize == other.pageSize &&
+           itemsTotal == other.itemsTotal;
+  }
+
+  int get hashCode => quiver.hash3(pageNum, pageSize, itemsTotal);
+
   String toString() {
-    return "PagingInfo(pageNum: $pageNum, pageSize: $pageSize, items: $itemsTotal)";
+    return "Paginator(pageNum: $pageNum, pageSize: $pageSize, items: $itemsTotal)";
   }
 }

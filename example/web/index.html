@@ -12,7 +12,7 @@
         <th>Number</th>
         <th>Name</th>
     </tr>
-    <tr ng-repeat="item in ctrl.items | pagination:ctrl.paginator">
+    <tr ng-repeat="item in ctrl.items | pagination:ctrl.paginator.instance">
         <td>{{item.number}}</td>
         <td>{{item.name}}</td>
     </tr>

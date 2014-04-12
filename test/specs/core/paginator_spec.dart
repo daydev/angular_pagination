@@ -137,5 +137,26 @@ testPaginator() {
       expect(pinfo.pageNum, 3);
     });
 
+    test("copy should return new instance with the same state", () {
+      Paginator copy = pinfo.copy;
+      expect(pinfo, copy);
+      expect(pinfo, isNot(same(copy)));
+    });
+
+    test("intance should return new object if state has changed since previous call", () {
+      Paginator inst1 = pinfo.instance;
+      pinfo.pageNum = 4;
+      Paginator inst2 = pinfo.instance;
+      expect(inst1, isNot(same(inst2)));
+    });
+
+    test("instance should return THE SAME object if state havent changed since previous call", () {
+      Paginator inst1 = pinfo.instance;
+      pinfo.pageNum = 1;
+      Paginator inst2 = pinfo.instance;
+      expect(inst1, same(inst2));
+      expect(inst2, same(pinfo));
+    });
+
   });
 }

@@ -7,17 +7,19 @@ part of angular.pagination.example;
 class ListController implements NgAttachAware {
   final Scope scope;
 
-  final Paginator paginator = new Paginator.empty();
-
   final List<Item> items = [];
+
+  Paginator paginator = new Paginator.empty();
 
   ListController(this.scope) {
     _fillItems();
   }
 
   attach() {
-    scope.$watch(() => items.length, (newSize) {
-      paginator.itemsTotal = newSize;
+    scope.watch("items.length", (_, newSize) {
+      if (newSize != null) {
+        paginator.itemsTotal = int.parse(newSize);
+      }
     });
   }
 
