@@ -1,10 +1,10 @@
 part of angular.pagination.example;
 
-@NgController(
+@Controller(
     selector: "[list-ctrl]",
     publishAs: "ctrl"
     )
-class ListController implements NgAttachAware {
+class ListController {
   final Scope scope;
 
   final List<Item> items = [];
@@ -13,14 +13,7 @@ class ListController implements NgAttachAware {
 
   ListController(this.scope) {
     _fillItems();
-  }
-
-  attach() {
-    scope.watch("items.length", (_, newSize) {
-      if (newSize != null) {
-        paginator.itemsTotal = int.parse(newSize);
-      }
-    });
+    paginator.itemsTotal = items.length;
   }
 
   _fillItems() {
@@ -33,12 +26,4 @@ class ListController implements NgAttachAware {
     List<int> chars = new List.generate(length, (_) => rnd.nextInt(26) + 97);
     return new String.fromCharCodes(chars);
   }
-}
-
-class Item {
-  final int number;
-
-  final String name;
-
-  Item(this.number, this.name);
 }

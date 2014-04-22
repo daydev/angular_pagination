@@ -2,10 +2,8 @@
 
 ## Description
 
-Simple utility module for the [angular.dart](https://github.com/angular/angular.dart).
-Includes `pagination` angular filter to paginate items of a `List`.
-The filter uses `Paginator` object that provides methods to navigate pages and deals with edge cases and illegal states,
-so the filter itself doesn't have to.
+This is paging formatter for [angular.dart](https://github.com/angular/angular.dart) similar to `limitTo`, `orderBy` and `filter` formatters provided by angular.dart itself.
+The formatter uses `Paginator` object which provides methods to navigate pages and deals with edge cases and illegal states.
 
 ## Usage
 
@@ -34,21 +32,21 @@ class YourModule extends Module {
 }
 ```
 
-Create `Paginator` object somewhere in angular scope where it is convenient for you and pass it to `pagination` filter.
+Create `Paginator` object somewhere in angular scope where it is convenient for you and pass it to `pagination` formatter.
 For example, if you created `Paginator` directly in root `scope`:
 ```html
 <span ng-repeat="item in items | pagination:paginator.instance">...</span>
 ```
 ####Very Important Note
-You should pass `paginator.instance` to filter and not `paginator` itself.
+You should pass `paginator.instance` to the formatter and not `paginator` itself.
 This is because angular.dart's change detection algorithm checks current and previous values of an object for identity, not equality.
 So it will not react to changes of `paginator`'s state if the object's reference stays the same.
 The `instance` getter is a workaround to circumvent this issue. It will return a new reference if `paginator`'s state has changed since last call,
 and the same reference if it hasn't.
-You should use `instance` getter **only** when passing argument to filter and nowhere else.
+You should use `instance` getter **only** when passing argument to formatter and nowhere else.
 **You** work with `paginator` object directly, but angular change detection is forced to look at it through `instance` "proxy" if this makes sense.
 
-Then act on created `Paginator` object whatever way you like and filter will recompute visible items.
+Then act on created `Paginator` object whatever way you like and formatter will recompute visible items.
 For example
 ```html
 <button ng-click="paginator.goNext()">Next</button>
@@ -63,4 +61,4 @@ You create one instance for every isolated pagination you need and pass the refe
 `Paginator` is **not** injected via DI (there is no need, it has no dependencies).
 
 Refer to [example](https://github.com/daydev/angular_pagination/tree/master/example) to see how this utility library can be used to create a reusable pager component (e.g. like Twitter Bootstrap pager).
-Make note that `ctrl.paginator.instance` is used only as filter's argument, two-way data binding is through `ctrl.paginator` itself.
+Make note that `ctrl.paginator.instance` is used only as formatter's argument, two-way data binding is through `ctrl.paginator` itself.

@@ -1,16 +1,16 @@
 part of angular.pagination.test;
 
-testPaginationFilter() {
-  group("[PaginationFilter]", () {
-    PaginationFilter pagination;
+testPaginationFormatter() {
+  group("[PaginationFormatter]", () {
+    PaginationFormatter pagination;
 
     List<int> _fill(int size) => new List.generate(size, (i) => i + 1);
 
     setUp(() {
       setUpInjector();
       module((Module m) => m.install(new AngularPaginationModule()));
-      inject((PaginationFilter filter) {
-        pagination = filter;
+      inject((PaginationFormatter formatter) {
+        pagination = formatter;
       });
     });
     tearDown(tearDownInjector);
@@ -27,23 +27,23 @@ testPaginationFilter() {
 
     test("should return page specified", () {
       List items = _fill(100);
-      List filtered = pagination(
+      List paged = pagination(
           items,
           new Paginator(items.length)
             ..pageNum = 3);
-      expect(filtered.first, 41);
-      expect(filtered.last, 60);
+      expect(paged.first, 41);
+      expect(paged.last, 60);
     });
 
     test("should support custom page size", () {
       List items = _fill(100);
-      List filtered = pagination(
+      List paged = pagination(
           items,
           new Paginator(items.length, 16)
             ..pageNum = 3
           );
-      expect(filtered.first, 33);
-      expect(filtered.last, 48);
+      expect(paged.first, 33);
+      expect(paged.last, 48);
     });
 
     test("should update Paginator with length of input list", () {

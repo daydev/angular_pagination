@@ -3,9 +3,9 @@
     <meta charset="UTF-8">
     <title>Angular Pagination Example</title>
 </head>
-<body ng-app list-ctrl>
+<body list-ctrl>
 
-<ng-pagination-example-pager paginator="ctrl.paginator"></ng-pagination-example-pager>
+<ngx-example-pager paginator="ctrl.paginator"></ngx-example-pager>
 
 <table>
     <tr>
@@ -18,9 +18,10 @@
     </tr>
 </table>
 
-<ng-pagination-example-pager paginator="ctrl.paginator"></ng-pagination-example-pager>
+<ngx-example-pager paginator="ctrl.paginator"></ngx-example-pager>
 
 <script type="application/dart" src="main.dart"></script>
 <script src="packages/browser/dart.js"></script>
+<script src="packages/shadow_dom/shadow_dom.min.js"></script>
 </body>
 </html>

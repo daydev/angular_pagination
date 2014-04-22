@@ -8,9 +8,9 @@ import 'package:angular_pagination/angular_pagination.dart';
 
 part 'specs/core/paginator_spec.dart';
 
-part 'specs/filter/pagination_filter_spec.dart';
+part 'specs/formatter/pagination_formatter_spec.dart';
 
 main() {
   testPaginator();
-  testPaginationFilter();
+  testPaginationFormatter();
 }

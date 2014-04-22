@@ -1,12 +1,13 @@
-name: angular_pagination
+name: angular_pagination_example
 version: 0.2.0
 author: Egor Day <edaydev@gmail.com>
-description: Pagination formatter for angular.dart
+description: Example for angular_pagination
 homepage: https://github.com/daydev/angular_pagination.git
 dependencies:
   angular: any
-  quiver: any
-dev_dependencies:
+  angular_pagination:
+    path: ..
   browser: any
-  hop: any
-  unittest: any
+  shadow_dom: any
+transformers:
+- angular
