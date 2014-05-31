@@ -2,8 +2,7 @@ part of angular.pagination.example;
 
 @Controller(
     selector: "[list-ctrl]",
-    publishAs: "ctrl"
-    )
+    publishAs: "ctrl")
 class ListController {
   final Scope scope;
 

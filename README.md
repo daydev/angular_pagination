@@ -60,5 +60,5 @@ Etc.
 You create one instance for every isolated pagination you need and pass the reference around as you would with any normal object.
 `Paginator` is **not** injected via DI (there is no need, it has no dependencies).
 
-Refer to [example](https://github.com/daydev/angular_pagination/tree/master/example) to see how this utility library can be used to create a reusable pager component (e.g. like Twitter Bootstrap pager).
+Refer to [example](https://github.com/daydev/angular_pagination/tree/master/app/example) to see how this utility library can be used to create a reusable pager component (e.g. like Twitter Bootstrap pager).
 Make note that `ctrl.paginator.instance` is used only as formatter's argument, two-way data binding is through `ctrl.paginator` itself.

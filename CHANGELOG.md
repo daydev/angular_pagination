@@ -1,3 +1,6 @@
+##0.2.1
+Restructured example
+
 ##0.2.0
 Updated to conform with breaking changes in angular.dart 0.10.0
 

@@ -1,5 +1,5 @@
 name: angular_pagination
-version: 0.2.0
+version: 0.2.1
 author: Egor Day <edaydev@gmail.com>
 description: Pagination formatter for angular.dart
 homepage: https://github.com/daydev/angular_pagination.git
@@ -9,4 +9,5 @@ dependencies:
 dev_dependencies:
   browser: any
   hop: any
+  mock: any
   unittest: any
