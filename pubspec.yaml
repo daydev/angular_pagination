@@ -4,10 +4,10 @@ author: Egor Day <edaydev@gmail.com>
 description: Pagination formatter for angular.dart
 homepage: https://github.com/daydev/angular_pagination.git
 dependencies:
-  angular: any
+  angular: '>=1.0.0 <2.0.0'
   quiver: any
 dev_dependencies:
-  browser: any
+  browser: '>=0.10.0 <0.11.0'
   hop: any
-  mock: any
-  unittest: any
+  mock: '>=0.10.0 <0.12.0'
+  unittest: '>=0.10.1 <0.12.0'

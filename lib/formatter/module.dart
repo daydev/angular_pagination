@@ -9,7 +9,7 @@ part 'src/pagination_formatter.dart';
 
 class AngularPaginationModule extends Module {
   AngularPaginationModule() {
-    type(PaginationFormatter);
+    bind(PaginationFormatter);
   }
 }
 
