@@ -22,7 +22,13 @@ module.exports = function (config) {
         captureTimeout: 5000,
 
         plugins: [
-            'karma-dart'
-        ]
+            'karma-dart',
+            'karma-htmlfile-reporter'
+        ],
+        reporters: ['progress', 'html'],
+
+            htmlReporter: {
+              outputFile: 'test/units.html'
+            }
     });
 };

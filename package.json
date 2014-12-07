@@ -1,0 +1,9 @@
+{
+  "name": "angular_pagination",
+  "devDependencies": {
+    "karma": "~0.12.0",
+    "karma-chrome-launcher": "~0.1.3",
+    "karma-dart": "~0.2.8",
+    "karma-htmlfile-reporter": "^0.1.2"
+  }
+}
