@@ -14,13 +14,12 @@ class AngularPaginationExampleModule extends Module {
   AngularPaginationExampleModule() {
     install(new AngularPaginationModule());
     install(new ExamplePagerModule());
-
-    type(ListController);
   }
 }
 
 main() {
   applicationFactory()
+  .rootContextType(ListController)
   .addModule(new AngularPaginationExampleModule())
   .run();
 }
