@@ -3,3 +3,7 @@
 pubspec.lock
 packages
 **/packages
+*.dart.js
+*.js_
+*.js.deps
+*.js.map
