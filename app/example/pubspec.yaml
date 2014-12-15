@@ -4,7 +4,7 @@ author: Egor Day <edaydev@gmail.com>
 description: Example for angular_pagination
 homepage: https://github.com/daydev/angular_pagination.git
 dependencies:
-  angular: any
+  angular: '>=1.0.0 <2.0.0'
   angular_pagination:
     path: ../..
   browser: any

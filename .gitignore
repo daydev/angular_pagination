@@ -7,3 +7,5 @@ packages
 *.js_
 *.js.deps
 *.js.map
+app/example/.pub/*
+.pub/*
