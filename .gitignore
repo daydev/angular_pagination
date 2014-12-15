@@ -9,3 +9,4 @@ packages
 *.js.map
 app/example/.pub/*
 .pub/*
+node_modules/*
