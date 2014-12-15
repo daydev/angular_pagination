@@ -1,16 +1,12 @@
 part of angular.pagination.example;
 
-@Controller(
-    selector: "[list-ctrl]",
-    publishAs: "ctrl")
+@Injectable()
 class ListController {
-  final Scope scope;
-
   final List<Item> items = [];
 
   Paginator paginator = new Paginator.empty();
 
-  ListController(this.scope) {
+  ListController() {
     _fillItems();
     paginator.itemsTotal = items.length;
   }

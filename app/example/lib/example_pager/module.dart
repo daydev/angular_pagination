@@ -7,6 +7,6 @@ part 'example_pager.dart';
 
 class ExamplePagerModule extends Module {
   ExamplePagerModule() {
-    type(NgxExamplePager);
+    bind(NgxExamplePager);
   }
 }

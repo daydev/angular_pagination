@@ -3,22 +3,22 @@
     <meta charset="UTF-8">
     <title>Angular Pagination Example</title>
 </head>
-<body list-ctrl>
+<body>
 
-<ngx-example-pager paginator="ctrl.paginator"></ngx-example-pager>
+<ngx-example-pager paginator="paginator"></ngx-example-pager>
 
 <table>
     <tr>
         <th>Number</th>
         <th>Name</th>
     </tr>
-    <tr ng-repeat="item in ctrl.items | pagination:ctrl.paginator.instance">
+    <tr ng-repeat="item in items | pagination:paginator.instance">
         <td>{{item.number}}</td>
         <td>{{item.name}}</td>
     </tr>
 </table>
 
-<ngx-example-pager paginator="ctrl.paginator"></ngx-example-pager>
+<ngx-example-pager paginator="paginator"></ngx-example-pager>
 
 <script type="application/dart" src="main.dart"></script>
 <script src="packages/browser/dart.js"></script>
